@@ -7,6 +7,7 @@ import ProfileScreen from './screens/ProfileScreen';
 
 import Header from './components/Header';
 import QuickSnapBar from './components/QuickSnapBar';
+import SettingsScreen from './screens/SettingsScreen';
 
 export default function App() {
 
@@ -25,6 +26,9 @@ if (currentPage === 'map'){
 if (currentPage === 'profile'){
   content = <ProfileScreen />
 }
+if (currentPage === 'settings'){
+  content = <SettingsScreen/>
+}
 
 
 
@@ -40,9 +44,8 @@ if (currentPage === 'profile'){
 
 const styles = StyleSheet.create({
   screen: {
+    marginTop: 10,
     height: "100%",
-    borderColor: "black",
-    borderWidth: 2,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",

@@ -4,12 +4,10 @@ import { StyleSheet, Text, View, Button } from "react-native";
 const Header = props => {
     return (
       <View style={styles.header}>
-        <Button title="Profile" onPress={props.pageSwitch.bind(this, 'profile')}></Button>
-        <Button title="Logo" onPress={props.pageSwitch.bind(this, 'map')}></Button>
-        <View styles={styles.karmaInfo}>
-          <Text>Karma: 5290</Text>
-          <Text>Karma level: Silver</Text>
-        </View>
+        <Button color='black' title="Profile" onPress={props.pageSwitch.bind(this, 'profile')}></Button>
+        <Button color='black' title="Logo(Map)" onPress={props.pageSwitch.bind(this, 'map')}></Button>
+        <Button color='black' title="Karma"></Button>
+        <Button color='black' title="Settings" onPress={props.pageSwitch.bind(this, 'settings')}></Button>
       </View>
     );
 }
@@ -21,6 +19,9 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 2,
     width: "95%",
+    paddingHorizontal: 10,
+    marginTop: 10,
+    zIndex: 10,
   },
   karmaInfo: {
     borderColor: "black",

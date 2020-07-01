@@ -4,9 +4,15 @@ import {View, TextInput, StyleSheet, Button } from 'react-native';
 const QuickSnapBar = props => {
     return (
       <View style={styles.quickBar}>
-        <Button title="Quick Snap"></Button>
-        <Button title="Search Market"></Button>
-        <TextInput placeholder="Search"></TextInput>
+        <View style={styles.button}>
+          <Button color="black" title="Users Near me "></Button>
+        </View>
+        <View style={styles.quickSnap}>
+          <Button color="black" title="Quick Snap "></Button>
+        </View>
+        <View style={styles.button}>
+          <Button color="black" title="Nodes Near me "></Button>
+        </View>
       </View>
     );
 }
@@ -14,9 +20,17 @@ const QuickSnapBar = props => {
 const styles = StyleSheet.create({
   quickBar: {
     flexDirection: "row",
-    borderColor: "black",
+    borderColor: "green",
     borderWidth: 2,
     width: "95%",
+    justifyContent: "space-between"
+  },
+  button: {
+    flex: 1
+  },
+  quickSnap: {
+      flex: 2,
+      margin: 10
   },
 });
 

@@ -1,23 +1,24 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native'
+import React from "react";
+import MapView from "react-native-maps";
+import { View, Text, StyleSheet, Dimensions } from "react-native";
 
-const MapScreen = props => {
-    return (
-      <View style={styles.googleMap}>
-        <Text>Map Div</Text>
-      </View>
-    );
-}
+const MapScreen = (props) => {
+  return (
+    <View style={styles.container}>
+      <MapView style={styles.map} />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-  googleMap: {
-    justifyContent: "center",
-    alignItems: "center",
-    borderColor: "black",
-    borderWidth: 2,
-    height: "78%",
-    width: "95%",
-    backgroundColor: "#ccc",
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  map: {
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
   },
 });
 

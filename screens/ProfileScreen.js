@@ -19,7 +19,7 @@ const ProfileScreen = (props) => {
       <Carousel />
     </View>
 
-    // Carousel Component
+
   );
 };
 
