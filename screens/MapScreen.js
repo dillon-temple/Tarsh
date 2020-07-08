@@ -1,24 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import MapView from "react-native-maps";
+import * as Location from "expo-location";
 import { View, Text, StyleSheet, Dimensions } from "react-native";
 
 const MapScreen = (props) => {
-  return (
+  const [location, SetLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      SetLocation(location);
+    })();
+  });
+
+  let text = "Waiting..";
+  if (errorMsg) {
+    text = errorMsg;
+  } else if (location) {
+    text = JSON.stringify(location);
+    console.log(location);
+  }
+
+  return location ? (
     <View style={styles.container}>
-      <MapView style={styles.map} />
+      <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+      />
     </View>
-  );
+  ) : (<View style={styles.container}>
+        <Text>Loading Your Location...</Text>
+      </View>)
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: "center",
+    alignItems: "center",
   },
   map: {
     width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height
+    height: Dimensions.get("window").height,
   },
 });
 
