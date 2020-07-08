@@ -2,6 +2,7 @@ import React from "react";
 import { View, StyleSheet, Button, Image, Text } from "react-native";
 
 import Carousel from '../components/Carousel';
+import Colors from '../constants/colors';
 
 const ProfileScreen = (props) => {
   return (
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: "90%",
     width: "33%",
-    backgroundColor: "#ccc",
+    backgroundColor: Colors.Main,
   },
   infoContainer: {
       flex: 1,

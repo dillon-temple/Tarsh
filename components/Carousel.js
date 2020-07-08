@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native'
 
+import Colors from '../constants/colors';
+
 const Carousel = props => {
     return (
       <View style={styles.container}>
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
         textDecorationColor: 'black'
     },
     carousel: {
-        backgroundColor: 'green',
+        backgroundColor: Colors.Main,
         flex: 1,
         width: "100%",
         alignItems: 'center',

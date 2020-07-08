@@ -9,6 +9,8 @@ import Header from './components/Header';
 import QuickSnapBar from './components/QuickSnapBar';
 import SettingsScreen from './screens/SettingsScreen';
 
+import Colors from './constants/colors';
+
 export default function App() {
 
 const [currentPage, setCurrentPage] = useState('map')
@@ -44,9 +46,8 @@ if (currentPage === 'settings'){
 
 const styles = StyleSheet.create({
   screen: {
-    marginTop: 10,
     height: "100%",
-    backgroundColor: "#fff",
+    backgroundColor: Colors.Background,
     alignItems: "center",
     justifyContent: "center",
   },

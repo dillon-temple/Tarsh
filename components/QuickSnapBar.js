@@ -1,17 +1,22 @@
 import React from 'react'
 import {View, TextInput, StyleSheet, Button } from 'react-native';
+import { AntDesign } from "@expo/vector-icons";
+
+import CameraButton from './CameraButton';
+import Colors from '../constants/colors';
+import MainButton from './MainButton';
 
 const QuickSnapBar = props => {
     return (
       <View style={styles.quickBar}>
         <View style={styles.button}>
-          <Button color="black" title="Users Near me "></Button>
+          <MainButton>Users Nearby</MainButton>
         </View>
-        <View style={styles.quickSnap}>
-          <Button color="black" title="Quick Snap "></Button>
-        </View>
+          <CameraButton onPress={() => {}} style={styles.cameraButton}>
+            <AntDesign name="camerao" size={40} color="black" />
+          </CameraButton>
         <View style={styles.button}>
-          <Button color="black" title="Nodes Near me "></Button>
+          <MainButton>Nodes Nearby</MainButton>
         </View>
       </View>
     );
@@ -20,18 +25,18 @@ const QuickSnapBar = props => {
 const styles = StyleSheet.create({
   quickBar: {
     flexDirection: "row",
-    borderColor: "green",
-    borderWidth: 2,
+    alignItems: "center",
     width: "95%",
-    justifyContent: "space-between"
+    height: "10%",
   },
   button: {
-    flex: 1
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "flex-end",
   },
-  quickSnap: {
-      flex: 2,
-      margin: 10
-  },
+  cameraButton: {
+    flex: 2,
+  }
 });
 
 export default QuickSnapBar;
