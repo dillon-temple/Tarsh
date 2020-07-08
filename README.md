@@ -1,7 +1,7 @@
 1. Expo.io -> Get started-> Install Node.js
 2. "npm install expo-cli --global"
 3. Clone Repo (Development branch coming soon)
-4. "npm start" in project folder
+4. "expo start" in project folder
 
 Dev IDE options: 
 
